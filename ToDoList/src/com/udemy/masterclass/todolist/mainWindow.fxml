@@ -1,0 +1,57 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ToggleButton?>
+<BorderPane fx:id="mainBorderPane" fx:controller="com.udemy.masterclass.todolist.Controller"
+            xmlns:fx="http://javafx.com/fxml" stylesheets="@styles.css">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="File">
+                    <items>
+                        <MenuItem text="New...." onAction="#showAddItemDialogPane"/>
+                        <SeparatorMenuItem/>
+                        <MenuItem text="Exit"/>
+                    </items>
+                </Menu>
+            </MenuBar>
+            <ToolBar>
+                <HBox spacing="10">
+                    <Button text="Add" onAction="#showAddItemDialogPane">
+                        <tooltip>
+                            <Tooltip text="Add mew todo item"/>
+                        </tooltip>
+                    </Button>
+                    <ToggleButton fx:id="filterToggleButton" text="Today only" onAction="#handleOnToggleButtonClicked"/>
+                </HBox>
+            </ToolBar>
+        </VBox>
+    </top>
+    <left>
+        <ListView fx:id="todoListView" id="listView" onKeyPressed="#handleDeleteKeyPressed"/>
+    </left>
+    <center>
+        <VBox style="-fx-background-color: white">
+            <TextArea fx:id="descriptionArea" id="textArea" VBox.vgrow="ALWAYS" editable="true" wrapText="true"
+                      onMouseExited="#handleOnMouseExited"/>
+            <HBox id="deadlineHBox" spacing="5">
+                <Label id="dueAndDeadlineLabels" text="Due: "/>
+                <Label fx:id="deadlineLabel" id="dueAndDeadlineLabels"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
