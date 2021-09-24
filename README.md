@@ -1,7 +1,7 @@
 # Java-Projects
 
-### 1. TodoListA 
-**ToDo list desktop application built using Java and JavaFX for GUI** <br/>
+### 1. TodoList 
+**A desktop application built using Java and JavaFX for GUI** <br/>
 A user can: 
 - Add a new Task with description and due date
 - Edit the task
